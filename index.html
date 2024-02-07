@@ -1,10 +1,32 @@
-} else { currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; updateStatus(`${currentPlayer}'s turn`); } } } function resetGame() { currentPlayer = 'X'; moves = 0; winner = null; createBoard(); updateStatus(`${currentPlayer}'s turn`); } function updateStatus(message)
-{ const status = document.getElementById('status'); status.textContent = message; } function updateScoreboard() { const scoreboard = document.getElementById('scoreboard'); scoreboard.innerHTML = `Score: X ${scores.X} - ${scores.O} O`; } document.getElementById('board-size').addEventListener('change',
-event => { boardSize = parseInt(event.target.value); resetGame(); }); resetGame(); updateScoreboard();
-</script>
-</body>
+<!DOCTYPE html>
 
-</html>
+<html>
+
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        /* Add CSS styles for the grid and cells here */
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        td {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 48px;
+            font-weight: bold;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        
+        td:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
 
 <body>
     <h1>Tic Tac Toe</h1>
